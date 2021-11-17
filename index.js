@@ -15,7 +15,6 @@ module.exports = function (options) {
   return through.obj(function (file, enc, cb) {
 
     if (file.isStream()) {
-      this.emit('error', new gutil.PluginError('gulp-to-json', 'Streaming not supported'));
       return cb();
     }
 
